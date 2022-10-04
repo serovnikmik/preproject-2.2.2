@@ -25,10 +25,7 @@ public class CarController {
     @GetMapping()
     public String list(Model model,
                        @RequestParam(required = false, name = "count", defaultValue = "5") int numberOfCars){
-        List<Car> limitedListOfCars = carService.getLimitedNumberOfCars(
-                carService.getCarList(), numberOfCars
-        );
-        model.addAttribute("cars", limitedListOfCars);
+        model.addAttribute("cars", carService.getLimitedList(numberOfCars));
         return "cars";
     }
 

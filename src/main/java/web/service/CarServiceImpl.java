@@ -30,4 +30,8 @@ public class CarServiceImpl implements CarService{
         return cars;
     }
 
+    public List<Car> getLimitedList(int number){
+        return getLimitedNumberOfCars(getCarList(), number);
+    }
+
 }
